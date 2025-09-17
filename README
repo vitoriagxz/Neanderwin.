@@ -1,0 +1,14 @@
+Média de Dois Números em NeanderWin
+
+Programa em NeanderWin que calcula a média inteira de dois números. Como a linguagem não tem divisão, a média é obtida subtraindo repetidamente 2 da soma dos números e contando quantas vezes isso é possível.
+
+Como funciona:
+Soma os números NUM1 e NUM2.
+Subtrai 2 da soma repetidamente, incrementando um contador a cada vez.
+Quando não é mais possível subtrair, o contador representa a média e é armazenado em MEDIA.
+
+Observação: A média não considera decimais.
+
+Execução
+Abra o NeanderWin, copie o código e execute.
+O resultado da média estará na variável MEDIA.
