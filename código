@@ -1,0 +1,31 @@
+INICIO:    LDA NUM1            ; Carrega NUM1
+           ADD NUM2            ; Soma NUM2
+           STA SOMA            ; Guarda a soma
+
+LOOP:      LDA SOMA            ; Carrega o valor atual da soma
+           SUB DOIS            ; Subtrai 2
+           JN FIM_DIV          ; Se o resultado for negativo (soma < 2), finaliza
+           STA SOMA_PARCIAL    ; Guarda o resultado parcial
+
+           LDA QUOCIENTE       ; Carrega quociente parcial
+           ADD UM              ; Incrementa
+           STA QUOCIENTE       ; Atualiza quociente
+           
+           LDA SOMA_PARCIAL    ; Carrega o valor parcial para continuar
+           STA SOMA            ; Coloca na SOMA para o próximo loop
+
+           JMP LOOP            ; Volta para repetir
+
+FIM_DIV:   LDA QUOCIENTE       ; Carrega o resultado final
+           STA MEDIA           ; Guarda como média
+           HLT                 ; Finaliza execução
+
+; -------------------- DADOS ------------------------
+NUM1:      DB 8                ; Primeiro número
+NUM2:      DB 6                ; Segundo número
+SOMA:      DB 0                ; Guarda a soma (será atualizada)
+SOMA_PARCIAL: DB 0             ; Variável temporária para a soma
+MEDIA:     DB 0                ; Guarda a média
+QUOCIENTE: DB 0                ; Resultado da divisão
+DOIS:      DB 2                ; Constante 2
+UM:        DB 1                ; Constante 1
